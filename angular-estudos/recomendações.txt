@@ -1,0 +1,4 @@
+criar projetos 
+    -> ng new nome-do-projeto --no-stand-alone
+    -> selecionar SCSS
+    -> não renderizar (N)

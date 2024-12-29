@@ -1,0 +1,18 @@
+> Regras dos Hooks
+Os Hooks  surgiram somente na versão 16.8 do React, então ainda é bem recente. Eles permitem que você use estado e outros recursos do React em componentes como função, anteriormente era possível somente como classe.
+
+Os Hooks não substituem os outros conceitos. Eles são complementares aos conceitos já existente do React.
+
+> Use Hooks Apenas no Nível Superior
+Não use Hooks dentro de loops, regras condicionais ou funções aninhadas (funções dentro de funções). Em vez disso, sempre use Hooks no nível superior de sua função React. Seguindo essas regras, você garante que os Hooks serão chamados na mesma ordem a cada vez que o componente renderizar. É isso que permite que o React preserve corretamente o estado dos Hooks quando são usados várias chamadas a useState e useEffect na mesma função.
+
+> Use Hooks Apenas Dentro de Funções do React
+Não use Hooks dentro de funções JavaScript comuns. Você só pode usar Hooks dentro de componentes React como função, ou dentro de um Hooks Customizados (veremos como criá-los em outro módulo).
+
+> Por que este curso começa com Hooks?
+Quando eu criei este curso e gravei as aulas, os Hooks não existiam ainda e naturalmente não foram usados. Quando o time do React fez o lançamento dos Hooks, foram lançados como versão de teste e não recomendavam seu uso em produção até o lançamento oficial. Como este curso é focado em projetos profissionais, segurei a inclusão dos Hooks no conteúdo do curso, porque poderia sofrer alterações ou até mesmo desistirem deles.
+
+Mas o tempo passou e o Facebook, mantenedora do React, anunciou o lançamento oficial dos Hooks, e naturalmente, outras novidades vieram com as novas versões. Eu poderia só gravar um conteúdo extra e adicionar no final do curso falando sobre os Hooks e as outras novidades, mas eu preso muito pela qualidade deste curso e quero passar o melhor e mais atualizado conteúdo que posso fazer para você. Então resolvi regravar todas as aulas com os recursos, conceitos e técnicas atuais de um desenvolvimento profissional.
+
+Não há problema em usar componentes React com classes, e o Facebook garante que irá mantê-la por muito tempo, mas também sugere que os componentes novos sejam criados como funções, pois agora é a forma primária de se criar um componente React.
+

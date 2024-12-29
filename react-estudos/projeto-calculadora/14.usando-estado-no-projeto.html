@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            html {
+                box-sizing: border-box;
+            }
+            *, *::before, *::after {
+                box-sizing: border-box;
+            }
+            body {
+                margin: 0;
+                background-color: #121212;
+                font-family: sans-serif;
+            }
+            .header {
+                background-color: #333;
+                text-align: center;
+                color: #fff;
+                padding: 16px;
+                border-radius: 4px;
+            }
+            .calculator {
+                background-color: #fff;
+                margin: 40px auto;
+                max-width: 400px;
+                padding: 16px;
+                border-radius: 4px;
+            }
+            .display {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 1.2em;
+            }
+            .keybord {
+                display: grid;
+                grid-template-columns:repeat(3, 1fr);
+                grid-gap: 16px;
+                font-size: 1.2em;
+                margin-top: 16px;
+            }
+            button {
+                border: 0;
+                border-radius: 4px;
+                background-color: #efefef;
+                padding: 8px;
+                cursor: pointer;
+                font-weight: bold;
+            }
+        </style>
+        <title>Calculadora React - Profissional</title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script type="text/babel">
+
+            // quando o retorno da função é apenas uma linha JSX, podemos fazer como está abaixo
+            const Header = () => <div class="header">Calculadora - aula 14 - usando estado no projeto</div>
+
+       
+            const Calculator = () => {
+
+                // estado é é qlq informação ou dado que é alterado com o passar do tempo
+                //const array = React.useState(""); 
+                //const display = array[0]; //primeiro item do array sempre será o estado
+                //const setDisplay = array[1]; //segundo item do array sempre será a função que vai alterar o estado
+
+                //código simplificado
+                const [display, setDisplay] = React.useState("")
+
+                return(
+                <div class="calculator">
+                    <div class="display">
+                        {display}
+                    </div>
+                    <div class="keybord">
+                        <button 
+                            onClick={()=>{
+                                setDisplay(display+"7");
+                            }}
+                        >
+                        7
+                        </button>
+                        <button
+                        onClick={()=>{
+                            setDisplay(display+"8");
+                        }}
+                        >
+                        8
+                        </button>
+                        <button>9</button>
+                        <button>4</button>
+                        <button>5</button>
+                        <button>6</button>
+                        <button>1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>0</button>
+                    </div>
+                </div>
+                )
+            };
+            const App = () => (
+                <div>
+                    <Header/>
+                    <Calculator/>
+                </div>
+            );
+            ReactDOM.render(
+                <App/>,
+                document.getElementById('root')
+            )
+
+        </script>
+    </body>
+</html>

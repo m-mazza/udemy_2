@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>React - aula 1</title>
+
+        <style>
+            .title {
+                color: green;
+            }
+            .subtitle {
+                color: orangered;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Aula 2 | Elementos React com JSX -->
+        <!-- https://www.udemy.com/course/react-redux-profissional/learn/lecture/17722472#questions -->
+
+        <div id="root"></div>
+        <div id="root2"></div>
+        
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script>
+            
+            // para que não seja necessário ficar criando  React.createElement todo momento, podemos passá-lo para uma variável
+            var e = React.createElement;
+            
+            ReactDOM.render(
+                // método render possui dois parâmetros
+                // o primeiro, colocamos o que iremos renderizar (h1)
+               e(
+                    "H1",
+                    { className: 'title' },
+                    "Olá Planeta",
+                    // podemos criar outro elemento quantas vezes for necessário
+                   e("br"),
+                   e(
+                        "small",
+                        { className: 'subtitle' },
+                        "Olá React"
+                    )
+                ),
+                // o segunto parâmetro é onde iremos renderizar
+                document.getElementById("root")
+            );
+        </script>
+        <!-- criado com JSX -->
+        <script type="text/babel">
+            ReactDOM.render(
+            <h1 className="title">
+                Olá Planetaaaa
+                <br/>
+                <small className="subtitle">
+                    Olá React
+                </small>
+            </h1>,
+            document.getElementById("root2")
+            );
+        </script>
+    </body>
+</html>
